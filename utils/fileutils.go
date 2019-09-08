@@ -5,15 +5,12 @@ import (
 	"os"
 )
 
-func IsDirExists(path string) bool {
-	f, e := os.Stat(path)
-	if e != nil {
-		logrus.Error(e)
-		return false
-	}
-	if f != nil && f.IsDir() {
-		return true
-	}
+func IsFileOrDirExists(path string) bool {
+
+	_, err := os.Stat(path)
+	fileExist := err == nil || os.IsExist(err)
+
+	logrus.Infof("file: %s, exist:%v", path, fileExist)
 
 	return false
 }
