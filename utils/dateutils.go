@@ -7,3 +7,11 @@ func StringToDateRFC1123(str string) time.Time {
 	t, _ := time.Parse("Mon, 02 Jan 2006 15:04:05 MST", str)
 	return t
 }
+
+func DateToStringYMDHMSZ(timestamp time.Time) string {
+	return timestamp.Format("2006-01-02T15:04:05Z07:00")
+}
+
+func DateToStringYMD(timestamp time.Time) string {
+	return timestamp.Format("2006-01-02")
+}
