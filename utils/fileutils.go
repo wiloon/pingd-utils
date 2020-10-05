@@ -1,7 +1,7 @@
 package utils
 
 import (
-	log "github.com/wiloon/pingd-log/logconfig/zaplog"
+	log "github.com/wiloon/pingd-log/v2/logconfig/zaplog"
 	"os"
 )
 
